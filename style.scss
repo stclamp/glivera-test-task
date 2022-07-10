@@ -12,6 +12,54 @@ $main-color: #4CB649;
     left: 0;
 }
 
+@mixin author {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+@mixin author-name {
+    margin-right: 11px;
+    color: #323642;
+}
+
+@mixin slash {
+    color: #889099;
+    margin-right: 8px;
+}
+
+@mixin date {
+    color: #889099
+}
+
+@mixin tags {
+    margin-top: 8px;
+}
+
+@mixin tags-link {
+    color: $main-color;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+@mixin comments {
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+    margin-top: 8px;
+}
+
+@mixin comments-count {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #889099;
+    margin-left: 13px;
+}
+
 *,
 *::before,
 *::after {
@@ -79,6 +127,7 @@ $main-color: #4CB649;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-left: 20px;
     }
 
     &__list-item {
@@ -113,7 +162,7 @@ $main-color: #4CB649;
     &__close {
         position: absolute;
         top: 1px;
-        right: 34px;
+        right: 27px;
         background: none;
         border: none;
         cursor: pointer;
@@ -249,51 +298,211 @@ $main-color: #4CB649;
     }
 
     &__author {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 22px;
+        @include author
     }
 
     &__author-name {
-        margin-right: 11px;
-        color: #323642;
+        @include author-name
     }
 
     &__slash {
-        color: #889099;
-        margin-right: 8px;
+        @include slash
     }
 
     &__date {
-        color: #889099
+        @include date
     }
 
     &__tags {
-        margin-top: 8px;
+        @include tags
     }
 
     &__tags-link {
-        color: $main-color;
-        font-size: 12px;
-        line-height: 14px;
-        text-transform: uppercase;
-        text-decoration: none;
-        letter-spacing: 0.5px;
+        @include tags-link
     }
 
     &__comments {
-        display: flex;
-        align-items: center;
-        padding-left: 3px;
-        margin-top: 8px;
+        @include comments
     }
 
     &__comments-count {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 22px;
-        color: #889099;
-        margin-left: 13px;
+        @include comments-count
+    }
+}
+
+.tags {
+    margin-top: 29px;
+
+    &__wrapper {
+        padding: 21px 26px;
+        display: flex;
+        background-color: #F7F7F7;
+        border-radius: 4px;
+        align-items: center;
     }
 
+    &__title {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        color: #323642;
+        margin-right: 43px;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__list-item {
+        margin-right: 34px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__list-link {
+        color: $main-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 500;
+        letter-spacing: 0.8px;
+    }
+
+    &__links {
+        margin-left: 236px;
+        display: flex;
+    }
+
+    &__link {
+        color: #323642;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin-right: 38px;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        font-weight: 500;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.content {
+    &__wrapper {
+        display: flex;
+        margin-top: 40px;
+        margin-left: -6px;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 44px;
+    }
+
+    &__posts {
+        // padding-right: 70px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: #EBECED;
+            right: 0;
+            top: 0;
+        }
+    }
+
+    &__posts-info {
+        margin-top: -3px;
+    }
+
+    &__posts-list {
+        margin-top: 40px;
+    }
+
+    &__posts-item {
+        display: flex;
+        padding-bottom: 48px;
+        margin-bottom: 31px;
+        text-decoration: none;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #EBECED;
+            bottom: 0;
+            left: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__posts-img {
+        margin-right: 40px;
+        max-height: 180px;
+    }
+
+    &__posts-title {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 34px;
+        color: #22252E;
+    }
+
+    &__posts-author {
+        @include author;
+        margin-top: 7px;
+    }
+
+    &__posts-name {
+        @include author-name;
+        margin-right: 15px;
+    }
+
+    &__posts-slash {
+        @include slash
+    }
+
+    &__posts-date {
+        @include date
+    }
+
+    &__posts-tag {
+        @include tags;
+        margin-top: 6px;
+    }
+
+    &__posts-tag a {
+        @include tags-link
+    }
+
+    &__posts-comments {
+        @include comments
+    }
+
+    &__posts-count {
+        @include comments-count
+    }
+
+    &__btn {
+        min-width: 260px;
+        text-transform: uppercase;
+        margin: 0 auto;
+        margin-top: 40px;
+        display: block;
+    }
 }

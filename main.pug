@@ -1,5 +1,71 @@
--
-    let promoTags = ['Copyright, ', 'News, ', 'Open Source, ', 'Privacy']
+- 
+    let promoTags = ['Copyright, ', 'News, ', 'Open Source, ', 'Privacy'];
+    let tagsList = ['bitcoin', 'bittorrent', 'irc', 'news', 'privacy', 'programming', 'security'];
+    let i = 0;
+    let contentPosts = [
+        {
+            img: 'assets/img/content_one.jpg',
+            title: 'The Internet Cannot be Trusted – Beamsplitters, Backdoors, and Broken Promises',
+            author: 'Derek Zimmer',
+            date: 'JUL 25, 2018',
+            tags: ['Governments, ', 'Networking, ', 'Open Source, ', 'Privacy, ', 'Security'],
+            comments: '0'
+        },
+        {
+            img: 'assets/img/content_two.jpg',
+            title: 'How to get cheaper flights using a VPN',
+            author: 'Jayson',
+            date: 'JUL 24, 2018',
+            tags: ['Guides'],
+            comments: '0'
+        },
+        {
+            img: 'assets/img/content_three.jpg',
+            title: 'Net Neutrality was repealed, but the fight is far from over',
+            author: 'Chris Miller',
+            date: 'JUL 22, 2018',
+            tags: ['Governments, ', 'Net Neutrality, ', 'News'],
+            comments: '0'
+        },
+        {
+            img: 'assets/img/content_one.jpg',
+            title: 'The Internet Cannot be Trusted – Beamsplitters, Backdoors, and Broken Promises',
+            author: 'Derek Zimmer',
+            date: 'JUL 25, 2018',
+            tags: ['Governments, ', 'Networking, ', 'Open Source, ', 'Privacy, ', 'Security'],
+            comments: '0'
+        },
+        {
+            img: 'assets/img/content_two.jpg',
+            title: 'How to get cheaper flights using a VPN',
+            author: 'Jayson',
+            date: 'JUL 24, 2018',
+            tags: ['Guides'],
+            comments: '0'
+        },
+        {
+            img: 'assets/img/content_three.jpg',
+            title: 'Net Neutrality was repealed, but the fight is far from over',
+            author: 'Chris Miller',
+            date: 'JUL 22, 2018',
+            tags: ['Governments, ', 'Net Neutrality, ', 'News'],
+            comments: '0'
+        }
+    ]
+    let blogLists = [
+        {
+            titleImg: 'assets/img/announcements.svg',
+            title: 'Announcements',
+            list: ['Upcoming Changes (Live Chat, Less Censorship, More Access)', 'New Servers (US Washington DC)', 'New Servers (US Denver)', 'Open Source: Releasing the PIA iOS Client', 'Opera Extension is now available']
+        },
+        {
+            titleImg: 'assets/img/popular.svg',
+            title: 'Popular posts',
+            list: ['The Gift of Privacy', 'UK High Court Censors Many Links To Popcorn Time: Useless, Dangerous Gesture', 'About the PIA Client Security and VPN Security in General', 'A Private Net Is Just As Fundamental A Right As Freedom Of Speech', 'Wiretapping Today Just Doesn’t Mean What The Word Meant In The 1990s, So Don’t Fall For That Lie']
+        }
+
+    ]
+    
 
 main.main   
     section.promo 
@@ -20,3 +86,52 @@ main.main
                             .promo__comments-icon
                                 img(src="assets/img/promo_comment.svg", alt="Comment Icon")
                             span.promo__comments-count 0
+    section.tags 
+        .container 
+            .tags__wrapper 
+                span.tags__title TAGS: 
+                ul.tags__list 
+                    each tag in tagsList
+                        li.tags__list-item
+                            a.tags__list-link(href="#") #{tag}
+                .tags__links 
+                    a.tags__link(href="#") team 
+                    a.tags__link(href="#") contact 
+    section.content 
+        .container 
+            .content__wrapper 
+                .content__posts 
+                    h2.content__title Recent posts
+                    ul.content__posts-list
+                        each post in contentPosts
+                            li.content__posts-item 
+                                img.content__posts-img(src=post.img, alt="First Img")
+                                .content__posts-info 
+                                    h3.content__posts-title #{post.title} 
+                                    .content__posts-author
+                                        span.content__posts-name #{post.author}
+                                        span.content__posts-slash |
+                                        span.content__posts-date #{post.date}
+                                    .content__posts-tag
+                                        each link in post.tags
+                                            a(href="#")  #{link}
+                                    .content__posts-comments 
+                                        img(src="assets/img/promo_comment.svg", alt="Comment Icon")
+                                        span.content__posts-count #{post.comments} 
+                    button.btn.btn__outline.content__btn older posts
+                                                   
+                            
+                        
+                .content__blog
+                    .content__search 
+                        input(type="search" placeholder="Search blog")
+                    .content__blog-lists
+                        each item in blogLists
+                            .content__lists-title
+                                img(src=item.titleImg, alt="Item Img").
+                                h3 #{item.title}
+                            ul.content__blog-list 
+                                each listItem in item.list 
+                                    li.content__blog-item #{listItem}
+
+                
