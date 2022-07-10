@@ -1,0 +1,22 @@
+-
+    let promoTags = ['Copyright, ', 'News, ', 'Open Source, ', 'Privacy']
+
+main.main   
+    section.promo 
+        .container 
+            .promo__wrapper 
+                .promo__content 
+                    p.promo__content-subtitle.
+                        TV Addons: Legal battle against Canadian media giants demonstrates severe consequences facing developers accused of copyright infringement
+                    .promo__info 
+                        .promo__author 
+                            span.promo__author-name Danica Sergison
+                            span.promo__slash |
+                            span.promo__date JUL 08, 2018
+                        .promo__tags 
+                            each link in promoTags
+                                a.promo__tags-link(href="#") #{link}
+                        .promo__comments
+                            .promo__comments-icon
+                                img(src="assets/img/promo_comment.svg", alt="Comment Icon")
+                            span.promo__comments-count 0

@@ -41,7 +41,6 @@ $main-color: #4CB649;
     font-size: 14px;
     line-height: 18px;
     font-weight: 500;
-    letter-spacing: 80%;
     cursor: pointer;
 
     &__outline {
@@ -211,4 +210,90 @@ $main-color: #4CB649;
     &__signup {
         width: 160px;
     }
+}
+
+.promo {
+    margin-top: 46px;
+
+    &__wrapper {
+        border: 1px solid #D7D8D9;
+        border-radius: 6px;
+        filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.101961));
+        display: flex;
+        justify-content: flex-end;
+        background-image: url('../assets/img/promo_img.jpg');
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: contain;
+        min-height: 400px;
+        margin-top: -8px;
+        margin-left: -6px;
+    }
+
+    &__content {
+        // max-width: 480px;
+        padding-top: 59px;
+        padding-right: 60px;
+        padding-left: 660px;
+    }
+
+    &__content-subtitle {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 34px;
+        color: #22252E
+    }
+
+    &__info {
+        padding-top: 84px;
+    }
+
+    &__author {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+
+    &__author-name {
+        margin-right: 11px;
+        color: #323642;
+    }
+
+    &__slash {
+        color: #889099;
+        margin-right: 8px;
+    }
+
+    &__date {
+        color: #889099
+    }
+
+    &__tags {
+        margin-top: 8px;
+    }
+
+    &__tags-link {
+        color: $main-color;
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+    }
+
+    &__comments {
+        display: flex;
+        align-items: center;
+        padding-left: 3px;
+        margin-top: 8px;
+    }
+
+    &__comments-count {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #889099;
+        margin-left: 13px;
+    }
+
 }
