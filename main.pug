@@ -65,7 +65,36 @@
         }
 
     ]
-    
+    let paysList = [
+        {
+            img: 'assets/img/visa.svg',
+            alt: 'Visa'
+        },
+        {
+            img: 'assets/img/mc.svg',
+            alt: 'MasterCard'
+        },
+        {
+            img: 'assets/img/amex.svg',
+            alt: 'American Express'
+        },
+        {
+            img: 'assets/img/paypal.svg',
+            alt: 'PayPal'
+        },
+        {
+            img: 'assets/img/bitcoin.svg',
+            alt: 'Bitcoin'
+        },
+        {
+            img: 'assets/img/OK.svg',
+            alt: 'OK Pay'
+        },
+        {
+            img: 'assets/img/amazon.svg',
+            alt: 'Amazon Pay'
+        },
+    ]
 
 main.main   
     section.promo 
@@ -119,12 +148,10 @@ main.main
                                         img(src="assets/img/promo_comment.svg", alt="Comment Icon")
                                         span.content__posts-count #{post.comments} 
                     button.btn.btn__outline.content__btn older posts
-                                                   
-                            
-                        
                 .content__blog
-                    .content__search 
-                        input(type="search" placeholder="Search blog")
+                    .content__search
+                        img(src="assets/img/search_icon.svg", alt="Search Icon")
+                        input(type="text" placeholder="Search blog")
                     .content__blog-lists
                         each item in blogLists
                             .content__lists-title
@@ -133,5 +160,41 @@ main.main
                             ul.content__blog-list 
                                 each listItem in item.list 
                                     li.content__blog-item #{listItem}
+                    .content__bitmap 
+                        img(src="assets/img/bitmap.jpg", alt="Bitmap")
+                    .content__tagcloud 
+                        h3.content__tagcloud-title Tag cloud
+                        img(src="assets/img/tagcloud.jpg", alt="Tagcloud")
+    section.price 
+        .container 
+            .price__wrapper 
+                h2.price__title Sign up today – 7 day money back guarantee
+                .price__cards 
+                    .price__card
+                        h4.price__card-title MONTHLY
+                        .price__card-price <span class="price__dollar">$</span>6.95<span class="price__mo">/mo.</span>
+                        p.price__card-descr Includes all VPN features.
+                        p.price__card-save 
+                        button.btn.btn__outline.price__btn SIGN UP
+                    .price__card.main 
+                        h4.price__card-title Two Years
+                        .price__card-price <span class="price__dollar">$</span>2.91<span class="price__mo">/mo.</span>
+                        p.price__card-descr <span class="price__old">$166.80</span> $69.95 per two years
+                        p.price__card-save Save 58%*
+                        button.btn.btn__fill.price__btn SIGN UP
+                    .price__card
+                        h4.price__card-title YEARLY
+                        .price__card-price <span class="price__dollar">$</span>3.33<span class="price__mo">/mo.</span>
+                        p.price__card-descr <span class="price__old">$83.40</span> $39.95 per year
+                        p.price__card-save Save 52%*
+                        button.btn.btn__outline.price__btn SIGN UP
+                .price__pay 
+                    p.price__pay-text Ways to pay:
+                    each img in paysList 
+                        img(src=img.img, alt=img.alt)
+                .price__links 
+                    a.price__link(href="#") How to pay anonymously 
+                    a.price__link(href="#") REDEEM GIFT CARD 
+
 
                 
