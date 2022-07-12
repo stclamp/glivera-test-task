@@ -154,17 +154,19 @@ main.main
                         input(type="text" placeholder="Search blog")
                     .content__blog-lists
                         each item in blogLists
-                            .content__lists-title
-                                img(src=item.titleImg, alt="Item Img").
-                                h3 #{item.title}
-                            ul.content__blog-list 
-                                each listItem in item.list 
-                                    li.content__blog-item #{listItem}
-                    .content__bitmap 
-                        img(src="assets/img/bitmap.jpg", alt="Bitmap")
-                    .content__tagcloud 
-                        h3.content__tagcloud-title Tag cloud
-                        img(src="assets/img/tagcloud.jpg", alt="Tagcloud")
+                            .content__blog-wrapper 
+                                .content__lists-title
+                                    img(src=item.titleImg, alt="Item Img").
+                                    h3 #{item.title}
+                                ul.content__blog-list 
+                                    each listItem in item.list 
+                                        li.content__blog-item #{listItem}
+                    .content__blog-tagclouds--bitmap 
+                        .content__bitmap 
+                            img(src="assets/img/bitmap.jpg", alt="Bitmap")
+                        .content__tagcloud 
+                            h3.content__tagcloud-title Tag cloud
+                            img(src="assets/img/tagcloud.jpg", alt="Tagcloud")
     section.price 
         .container 
             .price__wrapper 

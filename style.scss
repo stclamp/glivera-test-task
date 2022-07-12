@@ -68,10 +68,11 @@ $main-color: #4CB649;
     padding: 0;
     list-style: none;
     font-family: 'Roboto', sans-serif;
+    // border: 1px solid red
 }
 
 .container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -182,6 +183,10 @@ $main-color: #4CB649;
         font-family: 'Inter', sans-serif;
         font-size: 18px;
         line-height: 22px;
+    }
+
+    &__burger {
+        display: none;
     }
 
     &__menu {
@@ -777,7 +782,7 @@ $main-color: #4CB649;
         align-items: center;
         justify-content: space-between;
         margin: 0 auto;
-        margin-top: 27px;
+        margin-top: 53px;
         max-width: 916px;
     }
 
@@ -790,9 +795,9 @@ $main-color: #4CB649;
 
     &__links {
         display: flex;
-        justify-content: center;
-        margin-top: 12px;
-        margin-right: 42px;
+        justify-content: space-between;
+        max-width: 455px;
+        margin: 32px auto 0 auto;
     }
 
     &__link {
@@ -806,10 +811,13 @@ $main-color: #4CB649;
         position: relative;
         text-decoration: none;
         padding-right: 4px;
-        margin-right: 72px;
+
+        &:first-child {
+            margin-left: -5px;
+        }
 
         &:last-child {
-            margin-right: 0;
+            margin-right: 37px;
         }
 
         &::after {
