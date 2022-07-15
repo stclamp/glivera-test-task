@@ -68,7 +68,6 @@ $main-color: #4CB649;
     padding: 0;
     list-style: none;
     font-family: 'Roboto', sans-serif;
-    // border: 1px solid red
 }
 
 .container {
@@ -602,6 +601,10 @@ $main-color: #4CB649;
             left: 5px;
             top: 10px;
         }
+    }
+
+    &__blog-tagclouds--bitmap {
+        flex-direction: column;
     }
 
     &__bitmap {
